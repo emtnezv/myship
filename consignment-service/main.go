@@ -3,6 +3,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net"
 
@@ -15,7 +16,7 @@ import (
 )
 
 const (
-	port = ":50051"
+	port = "50051"
 )
 
 type IRepository interface {
@@ -71,9 +72,10 @@ func (s *service) GetConsignments(ctx context.Context, req *pb.GetRequest) (*pb.
 func main() {
 
 	repo := &Repository{}
+	serverport := fmt.Sprintf(":" + port)
 
 	// Set-up our gRPC server.
-	lis, err := net.Listen("tcp", port)
+	lis, err := net.Listen("tcp", serverport)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}

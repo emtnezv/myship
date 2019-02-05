@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	address         = "172.17.0.1:50051"
+	address         = "172.17.0.2:50051"
 	defaultFilename = "consignment.json"
 )
 

@@ -1,5 +1,15 @@
-#FROM alpine:latest
 FROM registry.access.redhat.com/rhel7-atomic
+#FROM bbva/hardened-rhel
+
+#RUN yum update -y && \
+#yum install -y --setopt=tsflags=nodocs \
+#iputils \
+#less \
+#net-tools \
+#nmap-ncat \
+#procps-ng \
+#traceroute &&\
+#	yum clean all
 
 ENV APP_ROOT=/app
 
